@@ -1,40 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lalchand Mondal | Portfolio</title>
-
-  <!-- Mobile Responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f4f4f4;
+      scroll-behavior: smooth;
     }
 
     /* ===== NAVBAR ===== */
     .navbar {
-      position: sticky;
-      top: 0;
       background: #0a66c2;
-      padding: 15px;
-      z-index: 1000;
-    }
-
-    .nav-container {
+      color: white;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .logo {
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .nav-links {
@@ -48,63 +37,27 @@
       font-weight: bold;
     }
 
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Hamburger */
     .hamburger {
       display: none;
       font-size: 26px;
-      color: white;
       cursor: pointer;
     }
 
-    /* ===== SECTIONS ===== */
-    .section {
-      margin: 30px auto;
-      width: 85%;
+    /* ===== HERO ===== */
+    .hero {
       background: white;
-      padding: 30px;
       text-align: center;
-      border-radius: 12px;
+      padding: 60px 20px;
     }
 
-    /* ===== PROJECTS ===== */
-    .projects-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
+    .hero h1 {
+      margin-bottom: 10px;
     }
 
-    .project-card {
-      width: 300px;
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    }
-
-    .project-card a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #0a66c2;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    /* Resume Button */
-    .resume-btn {
+    .btn {
       display: inline-block;
       margin-top: 15px;
-      padding: 12px 20px;
+      padding: 12px 22px;
       background: #0a66c2;
       color: white;
       text-decoration: none;
@@ -112,16 +65,48 @@
       font-weight: bold;
     }
 
+    /* ===== SECTIONS ===== */
+    .section {
+      background: white;
+      margin: 40px auto;
+      padding: 30px;
+      width: 85%;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .project-card {
+      width: 280px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0a66c2;
+      color: white;
+      margin-top: 40px;
+    }
+
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
-      .section {
-        width: 92%;
-      }
-
-      .project-card {
-        width: 100%;
-      }
-
       .nav-links {
         display: none;
         flex-direction: column;
@@ -130,20 +115,15 @@
         top: 60px;
         left: 0;
         width: 100%;
-        text-align: center;
+        padding: 20px 0;
       }
 
-      .nav-links a {
-        padding: 10px 0;
-        display: block;
+      .nav-links.show {
+        display: flex;
       }
 
       .hamburger {
         display: block;
-      }
-
-      .nav-links.active {
-        display: flex;
       }
     }
   </style>
@@ -151,40 +131,45 @@
 
 <body>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- NAVBAR -->
   <div class="navbar">
-    <div class="nav-container">
-
-      <div class="logo">Lalchand Mondal</div>
-
-      <div id="navLinks" class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-
+    <div><b>Lalchand Mondal</b></div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="menu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 
-  <!-- About -->
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Lalchand Mondal</h1>
+    <p>Computer Science Student | IIT Kharagpur</p>
+    <p>Aspiring Software Engineer</p>
+    <a href="#projects" class="btn">View Projects</a>
+  </div>
+
+  <!-- ABOUT -->
   <div id="about" class="section">
     <h2>About Me</h2>
     <p>
-      I am a Computer Science student at IIT Kharagpur.
-      I am learning DSA and Software Development.
+      I am a Computer Science & Engineering student at IIT Kharagpur.
+      I am learning Data Structures, Algorithms and Software Development.
     </p>
   </div>
 
-  <!-- Skills -->
+  <!-- SKILLS -->
   <div id="skills" class="section">
     <h2>Skills</h2>
-    <p>C, C++, DSA, OS, DBMS, CN, HTML</p>
+    <p><b>Programming:</b> C, C++</p>
+    <p><b>Core CS:</b> DSA, OS, DBMS, CN</p>
+    <p><b>Web:</b> HTML, CSS, JavaScript (basic)</p>
+    <p><b>Tools:</b> Git, GitHub</p>
   </div>
 
-  <!-- Projects -->
+  <!-- PROJECTS -->
   <div id="projects" class="section">
     <h2>Projects</h2>
 
@@ -193,41 +178,33 @@
       <div class="project-card">
         <h3>DSA Practice</h3>
         <p>Solved DSA problems using C++.</p>
-        <a href="https://github.com/lalchandmondalcse" target="_blank">
-          View on GitHub
-        </a>
+        <a href="https://github.com/lalchandmondalcse" target="_blank">View on GitHub</a>
       </div>
 
       <div class="project-card">
         <h3>Portfolio Website</h3>
         <p>Personal portfolio using HTML & GitHub Pages.</p>
-        <a href="https://lalchandmondalcse.github.io" target="_blank">
-          Live Website
-        </a>
+        <a href="https://lalchandmondalcse.github.io" target="_blank">Live Website</a>
       </div>
 
     </div>
   </div>
 
-  <!-- Contact -->
+  <!-- CONTACT -->
   <div id="contact" class="section">
     <h2>Contact</h2>
-    <p>
-      GitHub:
-      <a href="https://github.com/lalchandmondalcse" target="_blank">
-        github.com/lalchandmondalcse
-      </a>
-    </p>
-
-    <a href="resume.pdf" class="resume-btn" download>
-      Download Resume
-    </a>
+    <p>GitHub: <a href="https://github.com/lalchandmondalcse" target="_blank">github.com/lalchandmondalcse</a></p>
+    <a href="resume.pdf" class="btn" download>Download Resume</a>
   </div>
+
+  <footer>
+    © 2026 Lalchand Mondal
+  </footer>
 
   <!-- JS -->
   <script>
     function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
+      document.getElementById("menu").classList.toggle("show");
     }
   </script>
 
