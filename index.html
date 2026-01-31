@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Lalchand Mondal | Portfolio</title>
   <meta charset="UTF-8">
+  <title>Lalchand Mondal | Portfolio</title>
+
+  <!-- Mobile responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
@@ -23,9 +26,10 @@
 
     .navbar a {
       color: white;
-      margin: 0 15px;
+      margin: 8px 12px;
       text-decoration: none;
       font-weight: bold;
+      display: inline-block;
     }
 
     .navbar a:hover {
@@ -34,7 +38,7 @@
 
     /* Sections */
     .section {
-      margin: 40px auto;
+      margin: 30px auto;
       width: 85%;
       background: white;
       padding: 30px;
@@ -42,7 +46,7 @@
       border-radius: 12px;
     }
 
-    /* Project Cards */
+    /* Projects */
     .projects-container {
       display: flex;
       justify-content: center;
@@ -76,6 +80,7 @@
       text-decoration: underline;
     }
 
+    /* Resume button */
     .resume-btn {
       display: inline-block;
       margin-top: 15px;
@@ -89,6 +94,23 @@
 
     .resume-btn:hover {
       background: #004182;
+    }
+
+    /* 🔥 Mobile Responsive */
+    @media (max-width: 768px) {
+      .section {
+        width: 92%;
+        padding: 20px;
+      }
+
+      .project-card {
+        width: 100%;
+      }
+
+      .navbar a {
+        display: block;
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
